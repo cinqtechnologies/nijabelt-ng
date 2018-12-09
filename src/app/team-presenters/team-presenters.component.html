@@ -1,0 +1,23 @@
+<div class="content center">
+  <!-- list ninjas teams -->
+  <div class="team center" *ngFor="let team of ninjaTeams">
+    <strong>
+      <span class="teamName">Team: {{team.name}}</span>
+    </strong>
+    <button class="button-belts" (click)="loadBelts(team.name)">Visualizar Cinturões</button>
+
+    <!--Belts: <span *ngFor="let belt of team.belts">{{belt.color+ " | "}}</span>-->
+    <table style="margin-top: 20px">
+      <tr *ngFor="let ninja of team.ninjas">
+        <th><img src="/assets/images/ninja-icon.png" width="30" style="float: left; padding-right: 10px"></th>
+        <th style="text-align: left"><span style="color: aliceblue">{{ninja.name}}</span></th>
+      </tr>
+    </table>
+    <br>
+
+    <div style="padding: 0 5px 0" *ngFor="let belt of belts">
+      <img [src]="'/assets/images/belt-'+belt.name+'.png'" width="25" style="float: left; padding-left: 20px" >
+    </div>
+  </div>
+</div>
+

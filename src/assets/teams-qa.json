@@ -1,0 +1,35 @@
+{
+  "teams": [
+    {
+      "env": "STAGING",
+      "isOwner": true,
+      "name": "Presenters",
+      "ninjas": [
+        {
+          "name": "Roger Santos"
+        },
+        {
+          "name": "Ragazzo Ricardo"
+        }
+      ],
+      "belts": [
+        {
+          "id": 1,
+          "color": "white"
+        },
+        {
+          "id": 1,
+          "color": "red"
+        },
+        {
+          "id": 1,
+          "color": "brown"
+        },
+        {
+          "id": 1,
+          "color": "black"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  width: 100%;
+}
+
+body {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+  color: #615d5d;
+}
+
+.content {
+  max-width: 70%;
+  margin: auto;
+  font-family: Verdana;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.cinq-text {
+  color: #325586
+}
+
+.welcomeTitle {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cinqDojo {
+  width: 100%;
+  text-align: center;
+  color: #1691c6
+}
+
+.teamName {
+  font-family: Verdana;
+  color: white;
+}
+
+.team {
+  border-radius: 15px 50px;
+  background: #407589;
+  padding: 20px;
+  width: 500px;
+  height: 100%;
+  min-height: 300px;
+}
+
+.button-belts {
+  background-color: #407589;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

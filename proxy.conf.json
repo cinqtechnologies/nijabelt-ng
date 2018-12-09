@@ -1,0 +1,8 @@
+{
+  "/api/": {
+    "target": "http://ninjabelt-rs.ninjabelt-rs-feature-prepare-for-dojo.35.229.146.85.nip.io",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
