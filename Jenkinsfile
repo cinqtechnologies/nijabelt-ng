@@ -75,9 +75,9 @@ pipeline {
         }
       }
     }
-    stage('Promote to DEV-Environment ') {
+    stage('Promote to DEV Environment ') {
           when {
-        branch 'development'
+        branch 'develop'
           }
           steps {
             container('nodejs') {
