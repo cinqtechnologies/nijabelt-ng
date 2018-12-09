@@ -18,6 +18,8 @@ import { NinjaDataService } from '../backend';
 })
 export class TeamPresentersComponent implements OnInit {
 
+
+  isBelts: boolean;
   ninjaTeams: any[];
   belts: any [];
 
@@ -35,6 +37,7 @@ export class TeamPresentersComponent implements OnInit {
     this.dataService.retrieveBeltsByTeam(teamName.toLowerCase())
       .subscribe(data => {
         this.belts = data.belts;
+        this.isBelts = data.belts.length > 0;
       });
   }
 }
