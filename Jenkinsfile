@@ -38,7 +38,7 @@ pipeline {
         container('nodejs') {
 
           // ensure we're not on a detached head
-          sh "git checkout development"
+          sh "git checkout develop"
           sh "git config --global credential.helper store"
           sh "jx step git credentials"
 
@@ -88,7 +88,7 @@ pipeline {
                 sh "jx step helm release"
 
                 // promote through all 'Auto' promotion Environments
-            sh "jx promote -b --env development --timeout 1h --version \$(cat ../../VERSION)"
+            sh "jx promote -b --env develop --timeout 1h --version \$(cat ../../VERSION)"
               }
             }
           }
