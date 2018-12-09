@@ -81,7 +81,7 @@ pipeline {
           }
           steps {
             container('nodejs') {
-              dir('./charts/ninja-belt-ng') {
+              dir('./charts/ninjabelt-ng') {
                 sh "jx step changelog --version v\$(cat ../../VERSION)"
 
                 // release the helm chart
