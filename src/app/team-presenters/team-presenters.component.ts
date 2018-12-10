@@ -36,6 +36,7 @@ export class TeamPresentersComponent implements OnInit {
 
   loadBelts(teamName: string): void {
     this.displayLoanding = true;
+    this.isBelts = false;
     this.dataService.retrieveBeltsByTeam(teamName.toLowerCase())
       .subscribe(data => {
         this.belts = data.belts;

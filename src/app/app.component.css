@@ -62,14 +62,14 @@ img {
 
 .team {
   border-radius: 15px 50px;
-  background: #407589;
+  background: #407e98;
   padding: 20px;
   width: 500px;
   height: 100%;
 }
 
 .button-belts {
-  background-color: #407589;
+  background-color: #407e98;
   border: none;
   color: white;
   text-align: center;
@@ -101,7 +101,7 @@ img {
 
 .p-team {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 @keyframes lds-hourglass {
