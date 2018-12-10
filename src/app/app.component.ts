@@ -6,8 +6,9 @@
 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Title } from "@angular/platform-browser";
 
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
   isHomePage: boolean;
   env: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private titleService: Title) {
     this.router.events.subscribe((event: any) => {
       if (event.url) {
         this.isHomePage = event.url === '/';
@@ -27,5 +29,7 @@ export class AppComponent {
     });
 
     this.env = environment.env;
+
+    this.titleService.setTitle('NinjaB-' + this.env.toUpperCase());
   }
 }
