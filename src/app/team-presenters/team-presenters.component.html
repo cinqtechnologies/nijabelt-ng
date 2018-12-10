@@ -1,12 +1,16 @@
 <div class="content center">
   <!-- list ninjas teams -->
   <div class="team center" *ngFor="let team of ninjaTeams">
-    <strong>
-      <span class="teamName">Team: {{team.name}}</span>
-    </strong>
+    <p class="p-team">
 
-    <button *ngIf="!isBelts" class="button-belts" (click)="loadBelts(team.name)">Visualizar Cinturões</button>
-    <button *ngIf="isBelts" class="button-belts" (click)="isBelts=false">Remover Cinturões</button>
+      <span class="teamName">
+        <strong>Nome do time: </strong>
+        <span class="name">{{team.name}}</span>
+      </span>
+
+      <button *ngIf="!isBelts" class="button-belts" (click)="loadBelts(team.name)">Visualizar Faixas</button>
+      <button *ngIf="isBelts" class="button-belts" (click)="loadBelts(team.name)">Atualizar Faixas</button>
+    </p>
 
     <!--Belts: <span *ngFor="let belt of team.belts">{{belt.color+ " | "}}</span>-->
     <table style="margin-top: 20px">
@@ -17,7 +21,12 @@
     </table>
     <br>
 
-    <div *ngIf="isBelts">
+    <div *ngIf="!isBelts && displayLoanding" class="lds-hourglass"></div>
+    <p class="p-team">
+      <span *ngIf="isBelts" class="teamName">Faixas conquistadas!!</span>
+    </p>
+
+    <div *ngIf="isBelts" class="div-belts">
       <div style="padding: 0 5px 0" *ngFor="let belt of belts">
         <img [src]="'/assets/images/belt-'+belt.name+'.png'" width="25" style="float: left; padding-left: 20px">
       </div>
