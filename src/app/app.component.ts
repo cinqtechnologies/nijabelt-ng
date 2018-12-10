@@ -7,6 +7,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {environment} from '../environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +17,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   isHomePage: boolean;
+  env: string;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event: any) => {
@@ -22,5 +25,7 @@ export class AppComponent {
         this.isHomePage = event.url === '/';
       }
     });
+
+    this.env = environment.env;
   }
 }
