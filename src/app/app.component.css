@@ -60,16 +60,21 @@ img {
   color: white;
 }
 
+.teamName .name {
+  font-family: Verdana;
+  color: #cce8ff;
+}
+
 .team {
   border-radius: 15px 50px;
-  background: #407e98;
+  background: #1586b5;
   padding: 20px;
   width: 500px;
   height: 100%;
 }
 
 .button-belts {
-  background-color: #407e98;
+  background-color: #1586b5;
   border: none;
   color: white;
   text-align: center;

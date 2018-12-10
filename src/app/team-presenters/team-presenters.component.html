@@ -2,9 +2,11 @@
   <!-- list ninjas teams -->
   <div class="team center" *ngFor="let team of ninjaTeams">
     <p class="p-team">
-      <strong>
-        <span class="teamName">Team: {{team.name}}</span>
-      </strong>
+
+      <span class="teamName">
+        <strong>Nome do time: </strong>
+        <span class="name">{{team.name}}</span>
+      </span>
 
       <button *ngIf="!isBelts" class="button-belts" (click)="loadBelts(team.name)">Visualizar Faixas</button>
       <button *ngIf="isBelts" class="button-belts" (click)="loadBelts(team.name)">Atualizar Faixas</button>
