@@ -60,24 +60,66 @@ img {
   color: white;
 }
 
+.teamName .name {
+  font-family: Verdana;
+  color: #cce8ff;
+}
+
 .team {
   border-radius: 15px 50px;
-  background: #407589;
+  background: #1586b5;
   padding: 20px;
   width: 500px;
   height: 100%;
-  min-height: 300px;
 }
 
 .button-belts {
-  background-color: #407589;
+  background-color: #1586b5;
   border: none;
   color: white;
-  padding: 10px 22px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
 }
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 26px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+
+.p-team {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
