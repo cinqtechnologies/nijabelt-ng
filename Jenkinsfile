@@ -30,6 +30,29 @@ pipeline {
         }
       }
     }
+    stage('CI Build and push FEATURE snapshot') {
+                when {
+                  branch 'feature/*'
+                }
+                environment {
+                  NORMALIZED_BRANCH_NAME = "$BRANCH_NAME".replaceAll('/', '-').replaceAll('\\\\', '-')
+                  PREVIEW_VERSION = "0.0.0-FEATURE-$BUILD_NUMBER"
+                  PREVIEW_NAMESPACE = "$APP_NAME-$NORMALIZED_BRANCH_NAME".toLowerCase()
+                  HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
+                }
+                steps {
+                        container('nodejs') {
+                          sh "npm install"
+                          sh "CI=true DISPLAY=:99 npm test"
+                          sh "export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml"
+                          sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:$PREVIEW_VERSION"
+                          dir('./charts/preview') {
+                            sh "make preview"
+                            sh "jx preview --app $APP_NAME --dir ../.."
+                          }
+                        }
+                      }
+              }
     stage('Build dev') {
       when {
         branch 'develop'
