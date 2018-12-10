@@ -20,6 +20,7 @@ export class TeamPresentersComponent implements OnInit {
 
 
   isBelts: boolean;
+  displayLoanding: boolean;
   ninjaTeams: any[];
   belts: any [];
 
@@ -34,10 +35,12 @@ export class TeamPresentersComponent implements OnInit {
   }
 
   loadBelts(teamName: string): void {
+    this.displayLoanding = true;
     this.dataService.retrieveBeltsByTeam(teamName.toLowerCase())
       .subscribe(data => {
         this.belts = data.belts;
         this.isBelts = data.belts.length > 0;
+        this.displayLoanding = false;
       });
   }
 }

@@ -1,0 +1,6 @@
+.div-belts {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  overflow: hidden;
+}
