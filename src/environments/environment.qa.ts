@@ -6,6 +6,6 @@
 
 export const environment = {
   production: true,
-  env: 'staging',
+  env: 'stag',
   api_url: 'http://ninjabelt-rs.jxdojo-staging.35.229.146.85.nip.io/ninjabelt-rs'
 };
